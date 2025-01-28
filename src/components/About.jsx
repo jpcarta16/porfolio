@@ -35,6 +35,7 @@ const About = () => {
                         <h3 className="text-primary mb-3">Tecnologías que domino:</h3>
                         <ul className="list-unstyled">
                             <li>React</li>
+                            <li>Vue.js</li>
                             <li>JavaScript</li>
                             <li>HTML5</li>
                             <li>CSS3</li>
