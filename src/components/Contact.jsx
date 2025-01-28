@@ -58,7 +58,7 @@ const Contact = () => {
                 <div className="mt-5 text-center">
                     <h4>O también puedes contactarme a través de mis redes:</h4>
                     <div className="social-links mt-4">
-                        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="btn btn-outline-primary mx-2">
+                        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noreferrer" className="btn btn-outline-primary mx-2">
                             LinkedIn
                         </a>
                         <a href="mailto:tu-correo@example.com" className="btn btn-outline-danger mx-2">

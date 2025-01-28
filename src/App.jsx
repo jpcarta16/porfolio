@@ -37,7 +37,7 @@ function App() {
 
     // Limpia el evento de scroll al desmontar el componente
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div className="app-container">
@@ -46,10 +46,10 @@ function App() {
         <Sidebar />
       </div>
       <div className="main-content">
-        <Header id="home" />
-        <About id="about" />
-        <Projects id="projects" />
-        <Contact id="contact" />
+        <Header />
+        <About />
+        <Projects />
+        <Contact />
       </div>
       <Footer />
     </div>
