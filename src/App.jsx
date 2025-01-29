@@ -41,15 +41,13 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="sidebar">
-        <Navbar activeSection={activeSection} />
-        <Sidebar />
-      </div>
-      <div className="main-content">
+      <Navbar activeSection={activeSection} />
+      <Sidebar />
+      <div className="main-content" style={{ marginLeft: '60px' }}>
         <Header />
         <About />
         <Projects />
-        <Contact />
+        {/* <Contact /> */}
       </div>
       <Footer />
     </div>

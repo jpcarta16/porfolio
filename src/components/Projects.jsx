@@ -43,18 +43,16 @@ const Projects = () => {
         <section id="projects" className="py-5">
             <div className="container">
                 <h2 className="text-center mb-4">Proyectos Destacados</h2>
-                <div className="row">
-                    {projects.map(({ id, title, description, img, link, techStack, additionalDetails }, index) => (
-                        <div key={id} className="col-12 col-md-6 mb-12" data-aos="fade-up">
-                            <div className="project-card">
+                <div className="row g-4">
+                    {projects.map(({ id, title, description, img, link, techStack, additionalDetails }) => (
+                        <div key={id} className="col-12 col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                            <div className="project-card shadow-lg p-3 bg-white rounded">
                                 <div className="project-image">
                                     <LazyLoadImage
                                         src={img}
                                         alt={`Vista previa de ${title}`}
-                                        className="img-fluid"
+                                        className="img-fluid w-100"
                                         effect="blur"
-                                        width="100%"
-                                        height="300px"
                                     />
                                     <div className="project-overlay">
                                         <a href={link} className="btn btn-outline-light" target="_blank" rel="noopener noreferrer">
@@ -62,17 +60,17 @@ const Projects = () => {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="project-details">
-                                    <h5 className="project-title">{title}</h5>
-                                    <p className="project-description">{description}</p>
-                                    <p className="project-additional-details">{additionalDetails}</p>
-                                    <div className="tech-stack">{techStack}</div>
+                                <div className="project-content p-3">
+                                    <h3 className="h5">{title}</h3>
+                                    <p className="small">{description}</p>
+                                    <p className="text-muted small"><strong>Tecnologías:</strong> {techStack}</p>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
         </section>
     );
 };

@@ -1,29 +1,28 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
-// Puedes usar cualquier ícono de react-icons
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <ul>
+            <ul className="list-unstyled mb-0">
                 <li>
                     <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin />
+                        <FaLinkedin size={30} />
                     </a>
                 </li>
                 <li>
                     <a href="https://github.com/tu-perfil" target="_blank" rel="noopener noreferrer">
-                        <FaGithub />
+                        <FaGithub size={30} />
                     </a>
                 </li>
                 <li>
                     <a href="https://twitter.com/tu-perfil" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter />
+                        <FaTwitter size={30} />
                     </a>
                 </li>
                 <li>
                     <a href="https://instagram.com/tu-perfil" target="_blank" rel="noopener noreferrer">
-                        <FaInstagram />
+                        <FaInstagram size={30} />
                     </a>
                 </li>
             </ul>
