@@ -5,7 +5,6 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './components/About';
-import Contact from './components/Contact';
 import Sidebar from './components/Sidebar';
 import 'aos/dist/aos.css';
 import './App.css';
