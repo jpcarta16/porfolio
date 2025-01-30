@@ -21,7 +21,7 @@ function App() {
       const section = document.getElementById(id);
       return section ? section.offsetTop - navbarHeight : 0;
     });
-  }, []); // No es necesario `setOffsets`, ya que `offsetsRef` se actualiza sin causar renderizados adicionales
+  }, []);
 
   useEffect(() => {
     const handleScroll = throttle(() => {
