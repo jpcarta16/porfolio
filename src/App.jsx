@@ -42,11 +42,10 @@ function App() {
     <div className="app-container">
       <Navbar activeSection={activeSection} />
       <Sidebar />
-      <div className="main-content" style={{ marginLeft: '60px' }}>
+      <div className="main-content">
         <Header />
         <About />
         <Projects />
-        {/* <Contact /> */}
       </div>
       <Footer />
     </div>
