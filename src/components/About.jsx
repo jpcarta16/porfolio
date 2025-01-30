@@ -26,7 +26,7 @@ const About = () => {
                         <a
                             href="/img/JPCT_Web.pdf"
                             className="btn btn-primary btn-lg mt-3"
-                            download="Juan_Cardenas_CV.pdf"
+                            download="JPCT_Web.pdf"
                         >
                             Descargar CV
                         </a>
