@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { throttle } from 'lodash';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
@@ -12,31 +12,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
-
-  const navbarHeight = 60; // Ajusta la altura de tu Navbar aquí
-
-  const handleScroll = throttle(() => {
-    const sections = ['home', 'about', 'projects', 'contact'];
-
-    const offsets = sections.map((id) => {
-      const section = document.getElementById(id);
-      return section ? section.offsetTop - navbarHeight : 0; // Ajustamos por la altura del Navbar
-    });
-
-    const currentSection = sections.reduce((closest, section, index) => {
-      const distance = Math.abs(window.scrollY + window.innerHeight / 2 - offsets[index]);
-      return distance < Math.abs(window.scrollY + window.innerHeight / 2 - offsets[closest]) ? index : closest;
-    }, 0);
-
-    setActiveSection(sections[currentSection]);
-  }, 200); // Agrega un delay para optimizar la ejecución del scroll
+  const offsetsRef = useRef([]);
+  const navbarHeight = 60;
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const sections = ['home', 'about', 'projects', 'contact'];
+    offsetsRef.current = sections.map((id) => {
+      const section = document.getElementById(id);
+      return section ? section.offsetTop - navbarHeight : 0;
+    });
+  }, []); // No es necesario `setOffsets`, ya que `offsetsRef` se actualiza sin causar renderizados adicionales
 
-    // Limpia el evento de scroll al desmontar el componente
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      const sections = ['home', 'about', 'projects', 'contact'];
+      const currentSection = sections.reduce((closest, section, index) => {
+        const distance = Math.abs(window.scrollY + window.innerHeight / 2 - offsetsRef.current[index]);
+        return distance < Math.abs(window.scrollY + window.innerHeight / 2 - offsetsRef.current[closest]) ? index : closest;
+      }, 0);
+
+      setActiveSection(sections[currentSection]);
+    }, 200);
+
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+  }, []);
 
   return (
     <div className="app-container">
