@@ -19,7 +19,6 @@ body {
 .main-content {
   flex: 1;
   padding-top: 60px;
-  padding-left: 60px;
   margin: 0;
 }
 
@@ -27,7 +26,7 @@ body {
 .sidebar {
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 1%;
   transform: translateY(-50%);
   width: 60px;
   background-color: #343a40;
@@ -53,7 +52,6 @@ body {
   margin-bottom: 30px;
   text-align: center;
   transition: color 0.3s ease, transform 0.3s ease;
-  position: relative;
 }
 
 .sidebar a:hover {
@@ -94,28 +92,24 @@ body {
   left: 60px;
   width: calc(100% - 60px);
   z-index: 1000;
-  background-color: #343a40 !important;
+  background-color: #343a40;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-dark.bg-dark {
-  background-color: #343a40 !important;
-}
-
 .nav-link {
-  color: #fff !important;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #007bff !important;
+  color: #007bff;
   transform: scale(1.05);
 }
 
 .nav-link.active {
-  color: #007bff !important;
+  color: #007bff;
   font-weight: bold;
 }
 
@@ -131,15 +125,6 @@ body {
   background-size: cover;
   background-position: center;
   color: white;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 .header h1 {
