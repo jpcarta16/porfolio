@@ -47,14 +47,14 @@ const Projects = () => {
                     {projects.map(({ id, title, description, img, link, techStack, additionalDetails }) => (
                         <div key={id} className="col-12 col-md-6 col-lg-4 mb-4" data-aos="fade-up">
                             <div className="project-card shadow-lg p-3 bg-white rounded">
-                                <div className="project-image">
+                                <div className="project-image position-relative">
                                     <LazyLoadImage
                                         src={img}
                                         alt={`Vista previa de ${title}`}
                                         className="img-fluid w-100"
                                         effect="blur"
                                     />
-                                    <div className="project-overlay">
+                                    <div className="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-75 opacity-0 transition-all">
                                         <a href={link} className="btn btn-outline-light" target="_blank" rel="noopener noreferrer">
                                             Ver Proyecto
                                         </a>

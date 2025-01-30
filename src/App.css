@@ -19,52 +19,76 @@ body {
   padding-left: 0;
 }
 
+/* Sidebar */
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
   width: 60px;
   background-color: #343a40;
   z-index: 999;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 20px 0;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 0 10px 10px 0;
-  height: auto;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .sidebar a {
   color: white;
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
 }
 
 .sidebar a:hover {
   color: #007bff;
-  transform: translateX(5px);
-  /* Efecto de desplazamiento */
-  transition: all 0.3s ease;
+  transform: scale(1.2);
 }
 
-.sidebar a {
-  margin-bottom: 30px;
-  /* Aumentar espaciado */
+/* Tooltips */
+[data-tooltip] {
+  position: relative;
 }
 
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+}
 
 /* Barra de Navegación */
 .navbar {
   position: fixed;
   top: 0;
   left: 60px;
-  /* Ajusta según el ancho del Sidebar */
   width: calc(100% - 60px);
-  /* Asegura que el navbar ocupe el resto de la pantalla */
   z-index: 1000;
   background-color: #343a40 !important;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -72,18 +96,13 @@ body {
 
 .navbar-dark.bg-dark {
   background-color: #343a40 !important;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-light.bg-transparent:hover {
-  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav-link {
   color: #fff !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
@@ -91,11 +110,6 @@ body {
   transform: scale(1.05);
 }
 
-.navbar-toggler-icon {
-  background-color: #fff;
-}
-
-/* Activar enlace */
 .nav-link.active {
   color: #007bff !important;
   font-weight: bold;
@@ -136,13 +150,12 @@ body {
   background-color: #007bff;
   border: none;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .header .btn-primary:hover {
   background-color: #0056b3;
   transform: translateY(-5px);
-  /* Efecto de desplazamiento */
 }
 
 /* Sección de Sobre Mí */
@@ -178,7 +191,7 @@ body {
   color: #333;
   font-weight: 500;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 #about .list-unstyled li:hover {
@@ -196,9 +209,9 @@ body {
 
 .project-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -283,10 +296,11 @@ body {
   font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .project-overlay a:hover {
-  color: #f06595;
+  background: #0056b3;
 }
 
 /* Formulario de Contacto */
@@ -321,7 +335,7 @@ body {
   font-size: 1.2rem;
   border: none;
   border-radius: 5px;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 #contact button:hover {
@@ -375,5 +389,18 @@ footer {
 @media (min-width: 992px) {
   .project-card {
     width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 50px;
+    left: 10px;
+    padding: 15px 0;
+  }
+
+  .sidebar a {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 }
