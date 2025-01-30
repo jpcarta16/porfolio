@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { throttle } from 'lodash';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
