@@ -5,18 +5,22 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .main-content {
   flex: 1;
   padding-top: 60px;
-  padding-left: 0;
+  padding-left: 60px;
+  margin: 0;
 }
 
 /* Sidebar */
@@ -118,12 +122,15 @@ body {
 /* Header */
 .header {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 80px;
   background: linear-gradient(135deg, rgba(0, 123, 255, 0.4), rgba(0, 0, 0, 0.6)), url('https://www.example.com/your-image.jpg');
   background-size: cover;
   background-position: center;
-  position: relative;
   color: white;
-  text-align: center;
 }
 
 .overlay {
