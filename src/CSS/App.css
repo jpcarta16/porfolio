@@ -197,7 +197,7 @@ body {
 }
 
 /* Proyectos */
-#projects {
+/* #projects {
   background-color: #f8f9fa;
   padding: 60px 20px;
 }
@@ -309,7 +309,7 @@ body {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 15px;
-}
+} */
 
 /* Botones de filtro */
 .btn-outline-primary {
@@ -370,7 +370,7 @@ footer {
 }
 
 /* Estilos para pantallas pequeñas */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .project-card {
     width: 100%;
   }
@@ -395,10 +395,10 @@ footer {
   .container {
     padding: 0 15px;
   }
-}
+} */
 
 /* Pantallas medianas y grandes */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .project-card {
     width: 100%;
     margin: 0 auto;
@@ -409,7 +409,7 @@ footer {
   .project-card {
     width: 45%;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .sidebar {

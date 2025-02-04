@@ -7,7 +7,7 @@ import Header from './components/Header';
 import About from './components/About';
 import Sidebar from './components/Sidebar';
 import 'aos/dist/aos.css';
-import './App.css';
+import './CSS/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
