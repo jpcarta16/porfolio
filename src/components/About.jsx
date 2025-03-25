@@ -24,9 +24,9 @@ const About = () => {
                             Mi principal área de enfoque es el desarrollo frontend, donde utilizo herramientas como React para crear aplicaciones interactivas y con una experiencia de usuario fluida. Además, tengo experiencia trabajando con tecnologías como JavaScript, TypeScript, y Node.js, lo que me permite construir aplicaciones completas, tanto en el frontend como en el backend.
                         </p>
                         <a
-                            href="/img/JPCT_Web.pdf"
+                            href="/img/JPCT.pdf"
                             className="btn btn-primary btn-lg mt-3"
-                            download="JPCT_Web.pdf"
+                            download="JPCT.pdf"
                         >
                             Descargar CV
                         </a>
